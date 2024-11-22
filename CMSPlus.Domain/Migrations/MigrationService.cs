@@ -13,7 +13,7 @@ public class MigrationService:IMigrationService
     public MigrationService(string connectionString)
     {
         var cnx = new SqlConnection(connectionString);
-        var location = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "Migrations");
+        var location = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location)!, "Migrations");
         _evolve = new Evolve(cnx)
         {
             Locations = new[]{location},
