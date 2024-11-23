@@ -58,11 +58,13 @@ namespace CMSPlus.Presentation.Controllers
         {
             try
             {
+                var topic = await _topicService.GetById(model.TopicId);
+
                 var validationResult = await _createCommentValidator.ValidateAsync(model);
                 if (!validationResult.IsValid)
                 {
                     validationResult.AddToModelState(this.ModelState);
-                    var topic = await _topicService.GetById(model.TopicId);
+
                     var topicToDisplay = _mapper.Map<TopicEntity,TopicDetailsModel>(topic);
 
                     // Pass the `CreateCommentModel` back to the partial view
@@ -73,7 +75,7 @@ namespace CMSPlus.Presentation.Controllers
                 }
                 var commentEntity = _mapper.Map<CreateCommentModel, CommentEntity>(model);
                 await _commentService.Create(commentEntity);
-                return RedirectToAction("Details","Topic");
+                return RedirectToAction("Details","Topic", new { systemName = topic.SystemName});
             }
             catch(Exception ex)
             {
