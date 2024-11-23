@@ -1,0 +1,28 @@
+﻿@model IEnumerable<CMSPlus.Domain.Models.CommentModels.CommentModel>
+
+<div class="container">
+    <div class="row justify-content-start">
+        <div class="col-sm-6">
+
+            @if (Model != null && Model.Any())
+            {
+                <p class="text-center text-dark">There are @Model.Count() comments</p>
+                @foreach (var comment in Model)
+                {
+                    <div class="m-3">
+                        <div class="d-flex justify-content-between">
+                            <p class="mb-0"><strong>@comment.FullName</strong></p>
+                            <small class="text-muted">@comment.CreatedOnUtc?.ToString("dd MMMM yyyy")</small>
+                        </div>
+                        <p>@comment.CommentText</p>
+                    </div>
+                    <hr class="m-3" />
+                }
+            }
+            else
+            {
+                <p class="text-center text-dark">There are no comments yest</p>
+            }
+        </div>
+    </div>
+</div>

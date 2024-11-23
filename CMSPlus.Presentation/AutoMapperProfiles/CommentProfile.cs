@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using CMSPlus.Domain.Entities;
-using CMSPlus.Domain.Models.CommentModel;
+using CMSPlus.Domain.Models.CommentModels;
 
 namespace CMSPlus.Presentation.AutoMapperProfiles
 {

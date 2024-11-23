@@ -3,6 +3,7 @@
 @{
     ViewBag.Title = "Details";
     Layout = "_Layout";
+    var createCommentModel = ViewData["CreateCommentModel"] as CMSPlus.Domain.Models.CommentModels.CreateCommentModel;
 }
 <div class="container m-3">
     <h1 class="row-12 text-black">@Model.Title</h1>
@@ -13,5 +14,13 @@
     <p class="row-12 text-black">@Html.Raw(Model.Body)</p>
     <div class="row">
         <p class="col-12 text-black-50 text-end">System name: @Model.SystemName</p>
+    </div>
+
+    <div class="mt-3">
+        @await Html.PartialAsync("~/Views/Comment/DisplayByTopic.cshtml", @Model.Comments)
+    </div>
+
+    <div class="mt-3">
+        @await Html.PartialAsync("~/Views/Comment/Create.cshtml", createCommentModel ?? new CMSPlus.Domain.Models.CommentModels.CreateCommentModel { TopicId = @Model.Id })
     </div>
 </div>

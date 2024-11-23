@@ -1,4 +1,4 @@
-﻿using CMSPlus.Domain.Models.CommentModel;
+﻿using CMSPlus.Domain.Models.CommentModels;
 using FluentValidation;
 
 namespace CMSPlus.Presentation.Validations.CommentValidations

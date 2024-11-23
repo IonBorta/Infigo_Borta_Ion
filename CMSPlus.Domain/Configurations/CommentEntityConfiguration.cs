@@ -17,6 +17,7 @@ namespace CMSPlus.Domain.Configurations
             builder.Property(x => x.FullName).IsRequired();
             builder.Property(x => x.CommentText).IsRequired();
             builder.Property(x => x.TopicId).IsRequired();
+            builder.Property(x => x.UpdatedOnUtc).IsRequired();
             builder.Ignore(x => x.UpdatedOnUtc);
         }
     }

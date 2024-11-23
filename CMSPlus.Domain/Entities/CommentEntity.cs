@@ -11,5 +11,6 @@ namespace CMSPlus.Domain.Entities
         public string FullName { get; set; } = null;
         public string CommentText { get; set; } = null;
         public int TopicId { get; set; } = 0;
+        public TopicEntity Topic { get; set; }
     }
 }
