@@ -1,7 +1,7 @@
 using CMSPlus.Domain.Models.TopicModels;
 using CMSPlus.Domain.Persistance;
 using CMSPlus.Presentation.AutoMapperProfiles;
-using CMSPlus.Presentation.Validations;
+using CMSPlus.Presentation.Validations.TopicValidations;
 using FluentValidation;
 using Microsoft.AspNetCore.Identity;
 

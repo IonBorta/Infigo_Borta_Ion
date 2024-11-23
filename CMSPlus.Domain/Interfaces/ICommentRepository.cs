@@ -9,6 +9,7 @@ namespace CMSPlus.Domain.Interfaces
 {
     public interface ICommentRepository:IRepository<CommentEntity>
     {
-        public Task<CommentEntity?> GetCommentByTopicId(int topicId);
+        public Task<IEnumerable<CommentEntity>> GetCommentsByTopicId(int topicId);
+
     }
 }
